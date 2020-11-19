@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { Button, Icon } from 'semantic-ui-react';
+import RpsButtons from './components/RpsButtons';
 
-function App() {
-  return (
-    <div>
-      
-    </div>
-  );
+ class App extends Component {
+  render() {
+    return (
+      <div>
+       <RpsButtons />
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
