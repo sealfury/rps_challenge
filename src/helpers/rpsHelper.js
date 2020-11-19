@@ -1,4 +1,4 @@
-const rpsWinner = (player1, player2) => {
+export const rpsGame = (player1, player2) => {
 
   switch(player1) {
     case "rock":
