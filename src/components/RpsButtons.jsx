@@ -3,6 +3,7 @@ import { Button, Icon } from 'semantic-ui-react'
 
 
 const RpsButtons = () => {
+
   return (
     <div>
     <Button animated='fade'>
