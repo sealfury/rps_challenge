@@ -10,8 +10,15 @@ import  Selector from './components/Selector'
   render() {
     return (
       <div>
-        <RpsButtons />
-        <Selector />
+          <button id='rock'>
+            Rock
+          </button>
+          <button id='paper'>
+            Paper
+          </button>
+          <button id='scissors'>
+            Scissors
+          </button>
       </div>
     )
   }

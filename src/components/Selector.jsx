@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
  class Selector extends Component {
-  state = {value: ''}
+  state = {value: []}
 
   handleChange = e => {
     this.setState({value: e.target.value});
