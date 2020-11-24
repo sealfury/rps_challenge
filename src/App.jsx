@@ -9,18 +9,16 @@ import  Selector from './components/Selector'
      score: 0
    }
 
-  
-
   handleUserChoice(props) {
     alert(`You chose ${props}`);
     this.setState({ score: this.state.score + 1 })
-  };
+  }
 
   getComputerChoice = () => {
     let choices = ["rock", "paper", "scissors"];
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
     return computerChoice
-  };
+  }
 
   didUserWin = (userChoice, computerChoice) => {
     if (userChoice === "rock" && computerChoice === "scissors") {
@@ -40,7 +38,11 @@ import  Selector from './components/Selector'
     }
   }
 
-
+  increaseScore(didUserWin) {
+    if (didUserWin = true) {
+      this.setState({ score: this.state.score ++})
+    }
+  }
 
   
   render() {
