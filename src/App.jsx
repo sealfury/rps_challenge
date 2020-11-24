@@ -16,11 +16,31 @@ import  Selector from './components/Selector'
     this.setState({ score: this.state.score + 1 })
   };
 
-  getComputerChoice() {
+  getComputerChoice = () => {
     let choices = ["rock", "paper", "scissors"];
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
     return computerChoice
   };
+
+  didUserWin = (userChoice, computerChoice) => {
+    if (userChoice === "rock" && computerChoice === "scissors") {
+      return true
+    }
+    else if (userChoice === "scissors" && computerChoice === "paper") {
+      return true
+    }
+    else if (userChoice === "paper" && computerChoice === "rock") {
+      return true
+    }
+    else if (userChoice === computerChoice) {
+      alert('Draw! Try Again')
+    }
+    else {
+      return false
+    }
+  }
+
+
 
   
   render() {
