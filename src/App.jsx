@@ -5,14 +5,17 @@ import { rpsGame } from './helpers/rpsHelper';
 
 
  class App extends Component {
-   state = {
-     score: 0
-   }
-
+  state = {
+    score: {
+      user: 0,
+      computer: 0
+    }
+  }
+   
   handleUserChoice(userChoice) {
     const computerChoice = this.getComputerChoice()
-    const userWon = this.didUserWin(userChoice, computerChoice)
-    this.increaseScore(userWon)
+    const scoreWinner = this.didUserWin(userChoice, computerChoice)
+    this.increaseScore(scoreWinner)
   }
 
   getComputerChoice = () => {
@@ -35,17 +38,20 @@ import { rpsGame } from './helpers/rpsHelper';
       alert('Draw! Try Again')
     }
     else {
+      alert('You lost')
       return false
     }
   }
 
   increaseScore(didUserWin) {
     if (didUserWin == true) {
-      this.setState({ score: this.state.score + 1})
+      this.setState({ score: {user: this.state.score.user + 1} })
+    } 
+    else if (didUserWin == false) {
+      this.setState({ score: {computer: this.state.score.computer + 1} })
     }
   }
 
-  
   render() {
     return (
       <div>
@@ -59,7 +65,9 @@ import { rpsGame } from './helpers/rpsHelper';
             Scissors
           </button>
           <p>
-            Your Score: {this.state.score}
+            Your Score: {this.state.score.user}
+            <br/>
+            Computer Score: {this.state.score.computer}
           </p>
       </div>
     )
