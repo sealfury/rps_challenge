@@ -2,16 +2,17 @@ import React, { Component } from 'react'
 import RpsButtons from './components/RpsButtons';
 import { Button , Icon } from 'semantic-ui-react'
 import { rpsGame } from './helpers/rpsHelper';
-import  Selector from './components/Selector'
+
 
  class App extends Component {
    state = {
      score: 0
    }
 
-  handleUserChoice(props) {
-    alert(`You chose ${props}`);
-    this.setState({ score: this.state.score + 1 })
+  handleUserChoice(userChoice) {
+    const computerChoice = this.getComputerChoice()
+    const userWon = this.didUserWin(userChoice, computerChoice)
+    this.increaseScore(userWon)
   }
 
   getComputerChoice = () => {
@@ -21,13 +22,13 @@ import  Selector from './components/Selector'
   }
 
   didUserWin = (userChoice, computerChoice) => {
-    if (userChoice === "rock" && computerChoice === "scissors") {
+    if (userChoice == "rock" && computerChoice == "scissors") {
       return true
     }
-    else if (userChoice === "scissors" && computerChoice === "paper") {
+    else if (userChoice == "scissors" && computerChoice == "paper") {
       return true
     }
-    else if (userChoice === "paper" && computerChoice === "rock") {
+    else if (userChoice == "paper" && computerChoice == "rock") {
       return true
     }
     else if (userChoice === computerChoice) {
@@ -39,8 +40,8 @@ import  Selector from './components/Selector'
   }
 
   increaseScore(didUserWin) {
-    if (didUserWin = true) {
-      this.setState({ score: this.state.score ++})
+    if (didUserWin == true) {
+      this.setState({ score: this.state.score + 1})
     }
   }
 
