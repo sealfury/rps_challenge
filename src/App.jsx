@@ -112,7 +112,10 @@ import { getComputerChoice } from './modules/getComputerChoice';
         <Message id='message' icon>
         <Icon color='red' name='star' />
           <Message.Content>
-            <Message.Header>Scoreboard</Message.Header>
+            <Message.Header id='scoreboard'>
+              Scoreboard
+            </Message.Header>
+            <Message.Header id='first'>First To 5 Wins</Message.Header>
             <Message.List>
               <Message.Item>
                 You: {this.state.score.user}

@@ -16,6 +16,17 @@
   -webkit-text-stroke: 2px blue;
 }
 
+#first {
+  font-variant: normal;
+  font-size: 18px;
+  padding-top: 1%;
+}
+
+#scoreboard {
+  font-size: 24px;
+  color: rgb(235, 72, 72);
+}
+
 #body {
   background-image: url("https://pxt.azureedge.net/blob/68f66c3ddc3acfc4c53157abf92eace202d46db2/static/courses/csintro/conditionals/rock-paper-scissors-items.png");
 }

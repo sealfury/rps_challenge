@@ -1,11 +1,15 @@
 describe('RPS Game', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3000'), {
+      onBeforeLoad(window) {
+        cy.stub(window.Math, "random").returns(1)
+      }
+    }
   })
 
   it('Plays Rock', () => {
     cy.get('button#rock').click();
-    cy.get('#message').should('contain', 'Scoreboard')
+    cy.get('#message').should('contain', 'You: 1')
   })
 
   it('Plays Scissors', () => {
