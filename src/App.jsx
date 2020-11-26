@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import RpsButtons from './components/RpsButtons';
-import { Button , Icon } from 'semantic-ui-react'
+import { Button , Grid, Icon, Message, Segment } from 'semantic-ui-react'
 import { rpsGame } from './helpers/rpsHelper';
 
 
@@ -15,7 +15,7 @@ import { rpsGame } from './helpers/rpsHelper';
   handleUserChoice(userChoice) {
     const computerChoice = this.getComputerChoice()
     const scoreWinner = this.didUserWin(userChoice, computerChoice)
-    this.increaseScore(scoreWinner)
+    this.incrementScore(scoreWinner)
   }
 
   getComputerChoice = () => {
@@ -43,7 +43,7 @@ import { rpsGame } from './helpers/rpsHelper';
     }
   }
 
-  increaseScore(didUserWin) {
+  incrementScore(didUserWin) {
     if (didUserWin == true) {
       this.setState({ score: {user: this.state.score.user + 1} })
     } 
@@ -54,22 +54,40 @@ import { rpsGame } from './helpers/rpsHelper';
 
   render() {
     return (
-      <div>
-          <button id='rock' name='rock' onClick={() => this.handleUserChoice('rock')}>
-            Rock
-          </button>
-          <button id='paper' name='paper' onClick={() => this.handleUserChoice('paper')}>
-            Paper
-          </button>
-          <button id='scissors' name='scissors' onClick={() => this.handleUserChoice('scissors')}>
+      <Segment>
+      <Grid columns={3}>
+        <Grid.Row>
+        <Grid.Column>
+          <Button color='red' size='huge' animated='fade' id='rock' name='rock' onClick={() => this.handleUserChoice('rock')}>
+            <Button.Content visible><Icon size='large' color='white' name='hand rock'></Icon></Button.Content>
+            <Button.Content hidden>Rock</Button.Content>
+          </Button>
+        </Grid.Column>
+        <Grid.Column>
+          <Button size='huge' color='green' animated='fade' id='paper' name='paper' onClick={() => this.handleUserChoice('paper')}>
+            <Button.Content visible><Icon size='large' color='white' name='hand paper'></Icon></Button.Content>
+            <Button.Content hidden>Paper</Button.Content>
+          </Button>
+        </Grid.Column>
+        <Grid.Column>
+          <Button id='scissors' name='scissors' onClick={() => this.handleUserChoice('scissors')}>
             Scissors
-          </button>
-          <p>
-            Your Score: {this.state.score.user}
-            <br/>
-            Computer Score: {this.state.score.computer}
-          </p>
-      </div>
+          </Button>
+        </Grid.Column>
+        </Grid.Row>
+      </Grid>
+          <Message icon>
+            <Icon color='red' name='star' />
+            <Message.Content>
+            <Message.Header>Scoreboard
+            </Message.Header>
+            <Message.List>
+            <Message.Item>You: {this.state.score.user}</Message.Item>
+            <Message.Item>Computer: {this.state.score.computer}</Message.Item>
+            </Message.List>
+            </Message.Content>
+          </Message>
+      </Segment>
     )
   }
 }
