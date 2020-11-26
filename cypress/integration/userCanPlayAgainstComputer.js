@@ -5,16 +5,16 @@ describe('RPS Game', () => {
 
   it('Plays Rock', () => {
     cy.get('button#rock').click();
-    cy.get('p#select-message').should('contain', 'You chose rock')
+    cy.get('#message').should('contain', 'Scoreboard')
   })
 
   it('Plays Scissors', () => {
     cy.get('button#scissors').click();
-    cy.get('p#select-message').should('contain', 'You chose scissors')
+    cy.get('#message').should('contain', '1')
   })
 
   it('Plays Paper', () => {
     cy.get('button#paper').click();
-    cy.get('p#select-message').should('contain', 'You chose paper')
+    cy.get('#message').should('contain', 'You')
   })
 })
