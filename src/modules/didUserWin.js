@@ -1,21 +1,22 @@
+
 const didUserWin = (userChoice, computerChoice) => {
-  if (userChoice == "rock" && computerChoice == "scissors") {
-    alert('You won!')
+  if (userChoice === "rock" && computerChoice === "scissors") {
+    alert(`Computer chose ${computerChoice}. You Win!`)
     return true
   }
-  else if (userChoice == "scissors" && computerChoice == "paper") {
-    alert('You won!')
+  else if (userChoice === "scissors" && computerChoice === "paper") {
+    alert(`Computer chose ${computerChoice}. You Win!`)
     return true
   }
-  else if (userChoice == "paper" && computerChoice == "rock") {
-    alert('You won!')
+  else if (userChoice === "paper" && computerChoice === "rock") {
+    alert(`Computer chose ${computerChoice}. You Win!`)
     return true
   }
   else if (userChoice === computerChoice) {
-    alert('Draw! Try Again')
+    alert(`Computer chose ${computerChoice}. Draw!`)
   }
   else {
-    alert('You lost :(')
+    alert(`Computer chose ${computerChoice}. You Lost :(`)
     return false
   }
 }
