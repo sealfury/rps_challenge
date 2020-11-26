@@ -3,7 +3,7 @@ This is the Rock/Paper/Scissors challenge for week 5 of the Craft Academy boot c
 in the style of a tech interview, using only previous assignments and official documentation as points of reference.
 
 ## Links:
-Deployment link: [Rock/Paper/Scissors](https://whs-rps-challenge.netlify.app/) 
+[Deployed Site](https://whs-rps-challenge.netlify.app/) 
 
 ## Tested with:
 - Cypress for acceptance test
