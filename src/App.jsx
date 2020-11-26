@@ -21,21 +21,31 @@ import { getComputerChoice } from './modules/getComputerChoice';
 
   incrementScore(didUserWin) { 
     if (didUserWin === true) {
-      this.setState({ score: {user: this.state.score.user + 1, computer: this.state.score.computer} })
+      this.setState({ score: 
+        {
+          user: this.state.score.user + 1, 
+          computer: this.state.score.computer
+        } 
+      })
     } 
     else if (didUserWin === false) {
-      this.setState({ score: {computer: this.state.score.computer + 1, user: this.state.score.user} })
+      this.setState({ score: 
+        {
+          computer: this.state.score.computer + 1, 
+          user: this.state.score.user
+        } 
+      })
     }
   }
 
   checkForVictory() {
     if (this.state.score.user === 5) {
       this.setState( { score: { user: 0, computer: 0 } })
-      alert('Game over, You Win')
+      alert('Game over, You Win!')
     }
     else if (this.state.score.computer === 5) {
       this.setState( { score: { user: 0, computer: 0 } })
-      alert('Game over, You Lose')
+      alert('Game over, You Lose!')
     }
   }
   
