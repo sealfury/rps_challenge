@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import RpsButtons from './components/RpsButtons';
-import { Button , Grid, Icon, Message, Segment } from 'semantic-ui-react'
+import { Button , Container, Grid, Icon, Message, Header } from 'semantic-ui-react'
 import { rpsGame } from './helpers/rpsHelper';
+import './styling/App.css';
 
 
  class App extends Component {
@@ -51,32 +52,36 @@ import { rpsGame } from './helpers/rpsHelper';
       this.setState({ score: {computer: this.state.score.computer + 1} })
     }
   }
-
+  
   render() {
     return (
-      <Segment>
-      <Grid columns={3}>
+      <body id='body'>
+      <Container id='container'>
+        <Header as='h1' id='header'>Welcome To Rock/Paper/Scissors!</Header>
+        <Header as='h2' id='header-2'>Click To Start Playing</Header>
+      <Grid id='rps-grid' columns={3}>
         <Grid.Row>
         <Grid.Column>
-          <Button color='red' size='huge' animated='fade' id='rock' name='rock' onClick={() => this.handleUserChoice('rock')}>
+          <Button color='red' size='massive' animated='fade' id='rock' name='rock' onClick={() => this.handleUserChoice('rock')}>
             <Button.Content visible><Icon size='large' color='white' name='hand rock'></Icon></Button.Content>
             <Button.Content hidden>Rock</Button.Content>
           </Button>
         </Grid.Column>
         <Grid.Column>
-          <Button size='huge' color='green' animated='fade' id='paper' name='paper' onClick={() => this.handleUserChoice('paper')}>
+          <Button size='massive' color='green' animated='fade' id='paper' name='paper' onClick={() => this.handleUserChoice('paper')}>
             <Button.Content visible><Icon size='large' color='white' name='hand paper'></Icon></Button.Content>
             <Button.Content hidden>Paper</Button.Content>
           </Button>
         </Grid.Column>
         <Grid.Column>
-          <Button id='scissors' name='scissors' onClick={() => this.handleUserChoice('scissors')}>
-            Scissors
+          <Button size='massive' color='purple' animated='fade' id='scissors' name='scissors' onClick={() => this.handleUserChoice('scissors')}>
+            <Button.Content visible><Icon size='large' color='white' name='hand scissors'></Icon></Button.Content>
+            <Button.Content hidden>Scissors</Button.Content>
           </Button>
         </Grid.Column>
         </Grid.Row>
       </Grid>
-          <Message icon>
+          <Message id='message' icon>
             <Icon color='red' name='star' />
             <Message.Content>
             <Message.Header>Scoreboard
@@ -87,7 +92,8 @@ import { rpsGame } from './helpers/rpsHelper';
             </Message.List>
             </Message.Content>
           </Message>
-      </Segment>
+      </Container>
+      </body>
     )
   }
 }

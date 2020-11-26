@@ -1,0 +1,47 @@
+#header {
+  text-align: center;
+  margin-top: 2%;
+  padding-bottom: 5%;
+  color: blanchedalmond;
+  font-size: 36px;
+  -webkit-text-stroke: 2px black;
+}
+
+#header-2 {
+  text-align: center;
+  padding-bottom:5%;
+  color: blanchedalmond;
+  font-size: 28px;
+  font-weight: bold;
+  -webkit-text-stroke: 2px blue;
+}
+
+#body {
+  background-image: url("https://pxt.azureedge.net/blob/68f66c3ddc3acfc4c53157abf92eace202d46db2/static/courses/csintro/conditionals/rock-paper-scissors-items.png");
+}
+
+#message {
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+#rps-grid {
+  text-align: center;
+  padding-bottom: 8%;
+}
+
+#message {
+  margin-bottom: 50%;
+}
+
+#rock {
+  font-variant: small-caps;
+}
+
+#paper {
+  font-variant: small-caps;
+}
+
+#scissors {
+  font-variant: small-caps;
+}
