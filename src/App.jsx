@@ -44,7 +44,7 @@ import './styling/App.css';
     }
   }
 
-  incrementScore(didUserWin) {
+  incrementScore(didUserWin) { 
     if (didUserWin == true) {
       this.setState({ score: {user: this.state.score.user + 1} })
     } 
@@ -117,21 +117,21 @@ import './styling/App.css';
               </Button>
             </Grid.Column>
           </Grid.Row>
-        </Grid>
-          <Message id='message' icon>
-            <Icon color='red' name='star' />
-            <Message.Content>
-              <Message.Header>Scoreboard</Message.Header>
-              <Message.List>
-                <Message.Item>
-                  You: {this.state.score.user}
-                </Message.Item>
-                <Message.Item>
-                  Computer: {this.state.score.computer}
-                </Message.Item>
-              </Message.List>
-            </Message.Content>
-          </Message>
+        </Grid>       
+        <Message id='message' icon>
+        <Icon color='red' name='star' />
+          <Message.Content>
+            <Message.Header>Scoreboard</Message.Header>
+            <Message.List>
+              <Message.Item>
+                You: {this.state.score.user}
+              </Message.Item>
+              <Message.Item>
+                Computer: {this.state.score.computer}
+              </Message.Item>
+            </Message.List>
+          </Message.Content>
+        </Message>
       </Container>
       </body>
     )
