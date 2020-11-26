@@ -10,7 +10,7 @@ describe('RPS Game', () => {
 
   it('Plays Scissors', () => {
     cy.get('button#scissors').click();
-    cy.get('#message').should('contain', '1')
+    cy.get('#message').should('contain', 'Computer')
   })
 
   it('Plays Paper', () => {

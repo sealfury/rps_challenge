@@ -16,7 +16,8 @@ import { getComputerChoice } from './modules/getComputerChoice';
   handleUserChoice(userChoice) {
     const computerChoice = getComputerChoice()
     const scoreWinner = didUserWin(userChoice, computerChoice)
-    this.incrementScore(scoreWinner)
+    this.checkForVictory()
+    this.incrementScore(scoreWinner) 
   }
 
   incrementScore(didUserWin) { 
@@ -25,6 +26,21 @@ import { getComputerChoice } from './modules/getComputerChoice';
     } 
     else if (didUserWin == false) {
       this.setState({ score: {computer: this.state.score.computer + 1, user: this.state.score.user} })
+    }
+  }
+
+  checkForVictory() {
+    if (this.state.score.user == 5) {
+      this.setState( { score: { user: 0, computer: 0 } })
+      return (
+        <p>Congratulations</p>
+      )
+    }
+    else if (this.state.score.computer == 5) {
+      this.setState( { score: { user: 0, computer: 0 } })
+      return (
+        <p>Sorry!</p>
+      )
     }
   }
   
